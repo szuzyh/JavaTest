@@ -103,7 +103,7 @@ public class TestWindow {
 						@Override
 						public void actionPerformed(ActionEvent e) {
 							// TODO Auto-generated method stub
-							int ret = Dispatch.call(disp, "getCardInfo", new Variant("E:\\head.jpg")).getInt();
+							int ret = Dispatch.call(disp, "getCardInfo", new Variant("E:\\head.bmp")).getInt();
 							if(ret==0){
 								name=Dispatch.call(disp, "Name").getString();
 								sex=Dispatch.call(disp, "Sex").getString();
@@ -142,7 +142,7 @@ public class TestWindow {
 								{
 									System.out.println("success");
 								}
-								ImageIcon imageIcon=new ImageIcon("E:\\head.jpg");
+								ImageIcon imageIcon=new ImageIcon("E:\\head.bmp");
 								window.lblNewLabel.setIcon(imageIcon);
 								window.NameText.setText(name);
 								window.SexText.setText(sex);
