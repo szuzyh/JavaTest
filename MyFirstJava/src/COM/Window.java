@@ -10,7 +10,7 @@ import javax.swing.JTextArea;
 
 public class Window {
 
-	private JFrame frame;
+	public JFrame frame;
 	public JTextArea textArea;
 
 	/**
