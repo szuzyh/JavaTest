@@ -103,7 +103,7 @@ public class TestWindow {
 						@Override
 						public void actionPerformed(ActionEvent e) {
 							// TODO Auto-generated method stub
-							int ret = Dispatch.call(disp, "getCardInfo", new Variant("E:\\head.bmp")).getInt();
+							int ret = Dispatch.call(disp, "getCardInfo", new Variant("E:\\Img\\head.jpg")).getInt();
 							if(ret==0){
 								name=Dispatch.call(disp, "Name").getString();
 								sex=Dispatch.call(disp, "Sex").getString();
@@ -115,35 +115,6 @@ public class TestWindow {
 								startDate=Dispatch.call(disp, "StartDate").getString();
 								endDate=Dispatch.call(disp, "EndDate").getString();
 								
-								ret = Dispatch.call(disp, "SaveCardData2Bmp", new Variant(1), new Variant("src\\Img\\front.bmp")).getInt();
-								if(ret != 0){
-									System.out.println("failed");
-								}
-								else{
-									System.out.println("success");
-								}
-								System.out.println("保存反面图片");
-								ret = Dispatch.call(disp, "SaveCardData2Bmp", new Variant(2), new Variant("src\\Img\\back.bmp")).getInt();
-								if(ret != 0){
-									System.out.println("failed");
-								}
-								else{
-									System.out.println("success");
-								}
-								
-								System.out.println("保存正反面");
-								
-								ret = Dispatch.call(disp, "SaveCardData2Bmp", new Variant(3), new Variant("src\\Img\\full.bmp")).getInt();
-								if(ret != 0)
-								{
-									System.out.println("failed");
-								}
-								else 
-								{
-									System.out.println("success");
-								}
-								ImageIcon imageIcon=new ImageIcon("E:\\head.bmp");
-								window.lblNewLabel.setIcon(imageIcon);
 								window.NameText.setText(name);
 								window.SexText.setText(sex);
 								window.NationText.setText(nation);
@@ -153,6 +124,7 @@ public class TestWindow {
 								window.DepartmentText.setText(department);
 								window.StartDateText.setText(startDate);
 								window.EndDateText.setText(endDate);
+							
 								addPhoto();
 							}else{
 								System.out.println("打开设备失败");
@@ -162,7 +134,8 @@ public class TestWindow {
 
 						private void addPhoto() {
 							// TODO Auto-generated method stub
-							
+							ImageIcon imageIcon=new ImageIcon("E:\\Img\\head.jpg");
+							window.lblNewLabel=new JLabel(imageIcon);
 						}
 					});
 					window.clearBtn.addActionListener(new ActionListener() {
